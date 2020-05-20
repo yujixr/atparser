@@ -36,7 +36,7 @@ fn item_builder(
     let link = format!("https://atcoder.jp{}", link);
 
     let title = title.inner_html();
-    let date = DateTime::parse_from_str(date.inner_html().as_str(), "%Y-%m-%d %H:%M:%S%z").unwrap();
+    let date = DateTime::parse_from_str(date.inner_html().as_str(), "%F %T%z").unwrap();
     let level = match level.value().attr("class").unwrap() {
         "user-red" => "All (AGC Class)",
         "user-orange" => "~2799 (ARC Class)",
